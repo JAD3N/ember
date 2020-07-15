@@ -5,7 +5,7 @@ authors = ["Jaden Buchan <me@jaden.bio>"]
 edition = "2018"
 license = "MIT"
 repository = "https://github.com/jad3n/ember"
-documentation = "https://docs.rs/ember/
+documentation = "https://docs.rs/ember/"
 description = """
 This crate is designed to be
 a placeholder for now.
