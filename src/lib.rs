@@ -81,7 +81,7 @@ async fn setup<A: App>() -> Setup {
     }
 }
 
-fn start(
+fn start<A: App>(
     Setup {
         window,
         event_loop,
@@ -93,6 +93,8 @@ fn start(
         queue,
     }: Setup,
 ) {
+    let app = A::new();
+
     event_loop.run(move |event, _, control_flow| {
         if let Event::WindowEvent { event, .. } = event {
             match event {
@@ -108,13 +110,13 @@ pub fn run<A: App>() {
     {
         wasm_bindgen_futures::spawn_local(async move {
             let setup = setup::<A>().await;
-            start(setup);
+            start::<A>(setup);
         });
     };
 
     #[cfg(not(target_arch = "wasm32"))]
     {
         let setup = futures::executor::block_on(setup::<A>());
-        start(setup);
+        start::<A>(setup);
     };
 }
