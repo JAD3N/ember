@@ -11,4 +11,108 @@ This crate is designed to be
 a placeholder for now.
 """
 
+[lib]
+
 [dependencies]
+winit = { version = "0.22", features = ["web-sys"] }
+futures = "0.3"
+log = "0.4"
+
+[dependencies.wgpu]
+package = "wgpu"
+version = "0.5"
+git = "https://github.com/gfx-rs/wgpu-rs"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+console_error_panic_hook = "0.1"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+console_log = "0.2"
+web-sys = { version = "0.3", features = [
+    "Document",
+    "Navigator",
+    "Node",
+    "NodeList",
+    "Gpu",
+    "GpuAdapter",
+    "GpuAddressMode",
+    "GpuBindGroup",
+    "GpuBindGroupEntry",
+    "GpuBindGroupDescriptor",
+    "GpuBindGroupLayout",
+    "GpuBindGroupLayoutEntry",
+    "GpuBindGroupLayoutDescriptor",
+    "GpuBlendDescriptor",
+    "GpuBlendFactor",
+    "GpuBlendOperation",
+    "GpuBindingType",
+    "GpuBuffer",
+    "GpuBufferBinding",
+    "GpuBufferCopyView",
+    "GpuBufferDescriptor",
+    "GpuCanvasContext",
+    "GpuColorDict",
+    "GpuColorStateDescriptor",
+    "GpuCommandBuffer",
+    "GpuCommandBufferDescriptor",
+    "GpuCommandEncoder",
+    "GpuCommandEncoderDescriptor",
+    "GpuCompareFunction",
+    "GpuComputePassDescriptor",
+    "GpuComputePassEncoder",
+    "GpuComputePipeline",
+    "GpuComputePipelineDescriptor",
+    "GpuCullMode",
+    "GpuDepthStencilStateDescriptor",
+    "GpuDevice",
+    "GpuDeviceDescriptor",
+    "GpuExtent3dDict",
+    "GpuFilterMode",
+    "GpuFrontFace",
+    "GpuIndexFormat",
+    "GpuInputStepMode",
+    "GpuLimits",
+    "GpuLoadOp",
+    "GpuOrigin3dDict",
+    "GpuPipelineLayout",
+    "GpuPipelineLayoutDescriptor",
+    "GpuPowerPreference",
+    "GpuPrimitiveTopology",
+    "GpuProgrammableStageDescriptor",
+    "GpuQueue",
+    "GpuRasterizationStateDescriptor",
+    "GpuRenderPassColorAttachmentDescriptor",
+    "GpuRenderPassDepthStencilAttachmentDescriptor",
+    "GpuRenderPassDescriptor",
+    "GpuRenderPassEncoder",
+    "GpuRenderPipeline",
+    "GpuRenderPipelineDescriptor",
+    "GpuRequestAdapterOptions",
+    "GpuSampler",
+    "GpuSamplerDescriptor",
+    "GpuShaderModule",
+    "GpuShaderModuleDescriptor",
+    "GpuStencilOperation",
+    "GpuStencilStateFaceDescriptor",
+    "GpuStoreOp",
+    "GpuSwapChain",
+    "GpuSwapChainDescriptor",
+    "GpuTexture",
+    "GpuTextureAspect",
+    "GpuTextureComponentType",
+    "GpuTextureCopyView",
+    "GpuTextureDescriptor",
+    "GpuTextureDimension",
+    "GpuTextureFormat",
+    "GpuTextureViewDescriptor",
+    "GpuTextureViewDimension",
+    "GpuTextureView",
+    "GpuVertexAttributeDescriptor",
+    "GpuVertexBufferLayoutDescriptor",
+    "GpuVertexFormat",
+    "GpuVertexStateDescriptor",
+    "GpuVertexAttributeDescriptor",
+    "HtmlCanvasElement",
+    "Window",
+]}
+js-sys = "0.3"
