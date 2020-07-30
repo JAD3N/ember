@@ -1,5 +1,5 @@
-pub trait App: 'static + Sized {
-    fn title() -> &'static str { "Ember" }
+use crate::Ember;
 
-    fn new() -> Self;
+pub trait App: 'static + Sized {
+    fn new(ember: Ember) -> Self;
 }
